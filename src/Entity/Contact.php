@@ -14,44 +14,42 @@ class Contact
 {
 
     /**
-     * @ORM\ID()
+     * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    protected $ID;
+    protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
      */
     protected $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $company;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", nullable=false)
      */
-    protected $telephone;
+    protected $phoneNumber;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $email;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="date", nullable=false)
      */
     protected $dateOfBirth;
 
 
-    protected $photoUser;
-
     /**
      * @return mixed
      */
-    public function getID()
+    public function getId()
     {
         return $this->ID;
     }
@@ -95,18 +93,18 @@ class Contact
     /**
      * @return mixed
      */
-    public function getTelephone()
+    public function getPhoneNumber()
     {
-        return $this->telephone;
+        return $this->phoneNumber;
     }
 
     /**
-     * @param mixed $telephone
+     * @param mixed $phoneNumber
      * @return Contact
      */
-    public function setTelephone($telephone)
+    public function setPhoneNumber($phoneNumber)
     {
-        $this->telephone = $telephone;
+        $this->phoneNumber = $phoneNumber;
         return $this;
     }
 
@@ -143,24 +141,6 @@ class Contact
     public function setDateOfBirth($dateOfBirth)
     {
         $this->dateOfBirth = $dateOfBirth;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPhotoUser()
-    {
-        return $this->photoUser;
-    }
-
-    /**
-     * @param mixed $photoUser
-     * @return Contact
-     */
-    public function setPhotoUser($photoUser)
-    {
-        $this->photoUser = $photoUser;
         return $this;
     }
 
