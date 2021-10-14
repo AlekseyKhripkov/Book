@@ -1,16 +1,51 @@
 <?php
 
 namespace App\Entity;
+use App\Repository\ContactRepository;
+use Doctrine\ORM\Mapping as ORM;
 
+
+
+
+/**
+ * @ORM\Entity(repositoryClass=ContactRepository::class)
+ */
 class Contact
 {
 
+    /**
+     * @ORM\ID()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     protected $ID;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $company;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     protected $telephone;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     protected $email;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     protected $dateOfBirth;
+
+
     protected $photoUser;
 
     /**
